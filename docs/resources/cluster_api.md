@@ -5,7 +5,7 @@
 Please refer to the corresponding documentation of the resource depending on the enviroment variable used.
 
 <details>
-<summary>Documentation for RESOURCE_CLUSTER_VERSION="2025-01-01" (Latest)</summary>
+<summary>Documentation for usage of RESOURCE_CLUSTER_VERSION="2025-01-01" (Latest)</summary>
 
 ## Example Usages
 
@@ -104,7 +104,7 @@ For more information see: [MongoDB Atlas API - Flex Cluster](https://www.mongodb
 </details>
 
 <details>
-<summary>Documentation for RESOURCE_CLUSTER_VERSION="2024-01-01" (Deprecated)</summary>
+<summary>Documentation for usage of RESOURCE_CLUSTER_VERSION="2024-01-01" (Deprecated)</summary>
 
 ## Example Usages
 
