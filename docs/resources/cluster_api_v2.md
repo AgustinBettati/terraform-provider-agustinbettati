@@ -6,7 +6,7 @@
 ## Example Usages
 
 ```terraform
-resource "mongodbatlas_flex_cluster" "example-cluster" {
+resource "mongodbatlas_cluster_api_v2" "example-cluster" {
   project_id = var.project_id
   name       = var.cluster_name
   provider_settings = {
@@ -16,21 +16,21 @@ resource "mongodbatlas_flex_cluster" "example-cluster" {
   termination_protection_enabled = true
 }
 
-data "mongodbatlas_flex_cluster" "example-cluster" {
+data "mongodbatlas_cluster_api_v2" "example-cluster" {
   project_id = var.project_id
-  name       = mongodbatlas_flex_cluster.example-cluster.name
+  name       = mongodbatlas_cluster.example-cluster.name
 }
 
-data "mongodbatlas_flex_clusters" "example-clusters" {
+data "mongodbatlas_clusters" "example-clusters" {
   project_id = var.project_id
 }
 
-output "mongodbatlas_flex_cluster" {
-  value = data.mongodbatlas_flex_cluster.example-cluster.name
+output "mongodbatlas_cluster_api_v2" {
+  value = data.mongodbatlas_cluster.example-cluster.name
 }
 
-output "mongodbatlas_flex_clusters_names" {
-  value = [for cluster in data.mongodbatlas_flex_clusters.example-clusters.results : cluster.name]
+output "mongodbatlas_clusters_names" {
+  value = [for cluster in data.mongodbatlas_clusters.example-clusters.results : cluster.name]
 }
 ```
 
@@ -92,7 +92,7 @@ Read-Only:
 ## Import 
 You can import the Flex Cluster resource by using the Project ID and Flex Cluster name, in the format `PROJECT_ID-FLEX_CLUSTER_NAME`. For example:
 ```
-$ terraform import mongodbatlas_flex_cluster.test 6117ac2fe2a3d04ed27a987v-yourFlexClusterName
+$ terraform import mongodbatlas_cluster.test 6117ac2fe2a3d04ed27a987v-yourFlexClusterName
 ```
 
 For more information see: [MongoDB Atlas API - Flex Cluster](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Flex-Clusters/operation/createFlexcluster) Documentation.

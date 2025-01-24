@@ -1,10 +1,10 @@
 # Data Source: mongodbatlas_clusters_api_v1
 
-`mongodbatlas_clusters_api_v1` returns all flex clusters in a project.
+`mongodbatlas_clusters_api_v1` returns all clusters in a project.
 
 ## Example Usages
 ```terraform
-resource "mongodbatlas_flex_cluster" "example-cluster" {
+resource "mongodbatlas_cluster_api_v1" "example-cluster" {
   project_id = var.project_id
   name       = var.cluster_name
   provider_settings = {
@@ -14,21 +14,21 @@ resource "mongodbatlas_flex_cluster" "example-cluster" {
   termination_protection_enabled = true
 }
 
-data "mongodbatlas_flex_cluster" "example-cluster" {
+data "mongodbatlas_cluster_api_v1" "example-cluster" {
   project_id = var.project_id
-  name       = mongodbatlas_flex_cluster.example-cluster.name
+  name       = mongodbatlas_cluster.example-cluster.name
 }
 
-data "mongodbatlas_flex_clusters" "example-clusters" {
+data "mongodbatlas_clusters_api_v1" "example-clusters" {
   project_id = var.project_id
 }
 
-output "mongodbatlas_flex_cluster" {
-  value = data.mongodbatlas_flex_cluster.example-cluster.name
+output "mongodbatlas_cluster_api_v1" {
+  value = data.mongodbatlas_cluster.example-cluster.name
 }
 
-output "mongodbatlas_flex_clusters_names" {
-  value = [for cluster in data.mongodbatlas_flex_clusters.example-clusters.results : cluster.name]
+output "mongodbatlas_clusters_names" {
+  value = [for cluster in data.mongodbatlas_clusters.example-clusters.results : cluster.name]
 }
 ```
 
