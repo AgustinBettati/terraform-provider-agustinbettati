@@ -1,3 +1,6 @@
+---
+page_title: "mongodbatlas_cluster_api (2024-01-02)"
+---
 # Resource: mongodbatlas_cluster_api
 
 `mongodbatlas_cluster_api` provides a Cluster resource. The resource lets you create, update, delete and import a cluster.
